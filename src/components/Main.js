@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export default function Main({ posts }) {
+export default function Main({ posts, getNextPage }) {
   return (
     <div className="container">
       <div className="row">
         <div className="col-lg-8 col-md-10 mx-auto">
-          {posts
-            && posts.map((post) => (
+          {posts &&
+            posts.map(post => (
               <div className="post-preview">
                 <Link to={`/post/${post._id}`}>
                   <h2 className="post-title">{post.title}</h2>
@@ -16,9 +16,15 @@ export default function Main({ posts }) {
               </div>
             ))}
           <div className="clearfix">
-            <a className="btn btn-primary float-right" href="#">
+            <button
+              type="button"
+              className="btn btn-primary float-right"
+              onClick={() => {
+                getNextPage();
+              }}
+            >
               Older Posts &rarr;
-            </a>
+            </button>
           </div>
         </div>
       </div>
