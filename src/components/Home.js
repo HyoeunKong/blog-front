@@ -13,6 +13,7 @@ export default function Home() {
   const getPosts = async (p = 1) => {
     const url = `${baseURL}/api/post?page=${p}`;
     const { data } = await axios.get(url);
+    console.log(data.posts);
     setPosts(data.posts);
   };
 
@@ -38,7 +39,7 @@ export default function Home() {
     await getPosts();
     await getTags();
   };
-  useEffect(async () => {
+  useEffect(() => {
     getAll();
   }, []);
 
