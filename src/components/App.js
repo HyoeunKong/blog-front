@@ -5,6 +5,7 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import Login from './Login';
+import Join from './join';
 import Post from './Post';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" render={(props) => <Login {...props} {...auth} />} />
       <Route path="/post/:id" component={Post} />
+      <Route path="/join" component={Join} />
       <Footer />
     </BrowserRouter>
   );
