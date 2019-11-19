@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Login from './Login';
 import Join from './join';
 import Post from './Post';
+import Write from './Write';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +26,7 @@ export default function App() {
       <Route path="/login" render={(props) => <Login {...props} {...auth} />} />
       <Route path="/post/:id" component={Post} />
       <Route path="/join" component={Join} />
+      <Route path="/write" component={Write} />
       <Footer />
     </BrowserRouter>
   );
